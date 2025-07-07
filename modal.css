@@ -1,0 +1,88 @@
+:root{
+    --primary-color: #1F2533;
+    --light-primary: #272E3F;
+    --lighest-color: #DCEFF9;
+    --secondary-color:#f18701;
+    --light-secondary:#FEA634;
+    --terciary-color:#2B061E;
+    --light-terciary:#480A32;
+  }
+#modal-overlay{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0; /*Aqui é o mais a esquerda e ao topo possível*/
+    width: 100vw;
+    height: 100dvh;
+    justify-content: center;  /*Centraliza ele na horizontal, direção principal*/
+    align-items: center;  /*Centraliza ele na direção secundária*/
+}
+
+.overlay{
+    visibility: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.open{
+  visibility: visible;
+  opacity: 1;
+}
+
+#modal-background{
+    background-color: var(--light-primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0; /*Sobreposição de "folhas" basicamente o 0 quer dizer que vai ser a grade que vai ficar por trás e o 1 é quem vai ficar um pra frente na sobreposição, o 2 ficaria mais na frente e assim por diante*/
+    opacity: 0.4;
+}
+
+#modal-container{
+    z-index: 1;
+    background-color: var(--lighest-color);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+}
+#central-wrapper{
+    display: flex;
+}
+
+
+#modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;    
+}
+
+#movie-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /*Divide os elementos em função do espaço que existem cada um deles*/
+    max-width: 300px; /*Diminui o espaçamento que sobra*/
+   
+}
+
+#Movie-Title{
+    padding: 1rem 0;
+}
+
+#movie-poster{
+    border-radius: 10px;
+}
+
+#add-to-list{
+    border: 3px solid var(--primary-color);
+    padding: 0.3rem 0;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 1px 1px 10px #000; /*Primeiro pra baixo, segundo direita e terceiro o raio do embaçamento*/
+}
+
+#add-to-list:focus,
+#add-to-list:hover {
+    background-color: var(--light-primary);
+    color: var(--lighest-color);
+}
